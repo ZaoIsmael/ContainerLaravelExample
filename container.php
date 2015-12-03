@@ -1,7 +1,5 @@
 <?php
 
-namespace Styde;
-
 use Closure;
 use InvalidArgumentException;
 use ReflectionClass;
@@ -58,7 +56,6 @@ class Container
     protected function instanceArgs($parameters) 
     {
         return $dependency = array_map(function ($parameter) {
-            
             return $this->build($parameter->getClass()->getName());
         }, $parameters);
     }
